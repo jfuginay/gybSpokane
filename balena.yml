@@ -1,0 +1,24 @@
+name: taky-server
+type: sw.application
+description: 'A lightweight TAK server implementation running directly on Balena device'
+assets:
+  repository:
+    type: blob.asset
+    data:
+      url: 'https://github.com/tkuester/taky'
+  logo:
+    type: blob.asset
+    data:
+      url: 'https://raw.githubusercontent.com/tkuester/taky/master/docs/logo.png'
+data:
+  applicationEnvironmentVariables:
+    - TAKY_LOG_LEVEL: 'debug'
+    - TAKY_HOSTNAME: '192.168.1.16'
+    - TAKY_PORT: '8087'
+    - TAKY_SSL_ENABLED: 'false'
+  applicationConfigVariables:
+    - BALENA_HOST_CONFIG_dtoverlay: ""
+  defaultDeviceType: raspberrypi4-64
+  supportedDeviceTypes:
+    - raspberrypi4-64
+version: 1.0.0
